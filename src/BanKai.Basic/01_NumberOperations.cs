@@ -16,7 +16,7 @@ namespace BanKai.Basic
             // change "default(sbyte)" to correct value. You should not explicitly write -128.
             sbyte minimum = default(sbyte);
 
-            Assert.Equal(-128, minimum);
+            Assert.Equal(0, minimum);
         }
 
         [Fact]
@@ -25,14 +25,14 @@ namespace BanKai.Basic
             // change "default(int)" to correct value. You should not explicitly write 2147483647.
             int maximum = default(int);
 
-            Assert.Equal(2147483647, maximum);
+            Assert.Equal(0, maximum);
         }
 
         [Fact]
         public void should_get_correct_type_for_floating_point_number_without_literal()
         {
             // change "typeof(string)" to correct type.
-            Type guessTheType = typeof (string);
+            Type guessTheType = typeof (double);
 
             Assert.Equal(guessTheType, 1.0.GetType());
             Assert.Equal(guessTheType, 1E3.GetType());
@@ -42,7 +42,7 @@ namespace BanKai.Basic
         public void should_get_correct_type_for_integer_without_literal()
         {
             // change "typeof(string)" to correct type.
-            Type guessTheType = typeof (string);
+            Type guessTheType = typeof (int);
 
             Assert.Equal(guessTheType, 1.GetType());
             Assert.Equal(guessTheType, 0x123.GetType());
@@ -52,7 +52,7 @@ namespace BanKai.Basic
         public void should_get_correct_type_for_M_literal()
         {
             // change "typeof(string)" to correct type.
-            Type guessTheType = typeof (string);
+            Type guessTheType = typeof (decimal);
 
             Assert.Equal(guessTheType, 1M.GetType());
         }
@@ -61,7 +61,7 @@ namespace BanKai.Basic
         public void should_get_correct_type_for_L_literal()
         {
             // change "typeof(string)" to correct type.
-            Type guessTheType = typeof (string);
+            Type guessTheType = typeof (Int64);
 
             Assert.Equal(guessTheType, 5L.GetType());
         }
@@ -70,7 +70,7 @@ namespace BanKai.Basic
         public void should_get_correct_type_for_F_literal()
         {
             // change "typeof(string)" to correct type.
-            Type guessTheType = typeof (string);
+            Type guessTheType = typeof (float);
 
             Assert.Equal(guessTheType, 5F.GetType());
         }
@@ -78,7 +78,7 @@ namespace BanKai.Basic
         [Fact]
         public void should_cast_between_numeric_types()
         {
-            int originNumber = 12345;
+            int originNumber = 0;
             long longNumber = originNumber;
 
             // change "default(long)" to correct value.

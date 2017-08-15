@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using BanKai.Basic.Common;
 using Xunit;
 
@@ -80,6 +81,8 @@ namespace BanKai.Basic
         [Fact]
         public void should_ref_to_same_location_when_passing_by_ref_for_ref_type()
         {
+            int a = 10;
+            Console.WriteLine("asdf");
             var refTypeObject = new RefTypeClass(1);
             RefTypeClass refToOriginalObject = refTypeObject;
 

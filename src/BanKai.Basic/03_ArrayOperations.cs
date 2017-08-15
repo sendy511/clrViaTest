@@ -24,7 +24,7 @@ namespace BanKai.Basic
             var array = new[] { 'a', 'e', 'i', 'o', 'u' };
 
             // change "typeof(FormatException)" to correct value.
-            Type expectedExceptionType = typeof(FormatException);
+            Type expectedExceptionType = typeof(IndexOutOfRangeException);
             
             Assert.NotEqual(typeof(ArgumentException), expectedExceptionType);
             Assert.NotEqual(typeof(SystemException), expectedExceptionType);
