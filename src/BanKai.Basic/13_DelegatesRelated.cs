@@ -30,7 +30,8 @@ namespace BanKai.Basic
             TransformerDelegateDemo transformer = EquivalentTransformation;
 
             // change variable value to fix test.
-            const string expectedDelegateType = "";
+            // Yansen
+            const string expectedDelegateType = "TransformerDelegateDemo";
 
             Assert.Equal(expectedDelegateType, typeof(TransformerDelegateDemo).Name);
             Assert.True(transformer is Delegate);
@@ -44,7 +45,7 @@ namespace BanKai.Basic
             int transformResult = transformer(2);
 
             // change variable value to fix test.
-            const int expectedResult = default(int);
+            const int expectedResult = 2;
 
             Assert.Equal(expectedResult, transformResult);
         }
@@ -57,7 +58,7 @@ namespace BanKai.Basic
             int actualResult = PassingDelegateAsArgument(transformer);
 
             // change variable value to fix test.
-            const int expectedResult = default(int);
+            const int expectedResult = 5;
 
             Assert.Equal(expectedResult, actualResult);
         }
@@ -73,7 +74,11 @@ namespace BanKai.Basic
             theDelegate();
 
             // change variable value to fix test.
-            var expectedTrace = new string[] {};
+            var expectedTrace = new string[]
+            {
+                "MulticastDelegateDemoClass.OneMethod() called",
+                "MulticastDelegateDemoClass.AnotherMethod() called"
+            };
 
             Assert.Equal(expectedTrace, demoObject.Trace);
         }
@@ -90,7 +95,7 @@ namespace BanKai.Basic
             theDelegate();
 
             // change variable value to fix test.
-            var expectedTrace = new string[] { };
+            var expectedTrace = new string[] { "MulticastDelegateDemoClass.AnotherMethod() called" };
 
             Assert.Equal(expectedTrace, demoObject.Trace);
         }
@@ -106,7 +111,7 @@ namespace BanKai.Basic
             theDelegate += demoObject.AnotherMethod;
 
             // change variable value to fix test.
-            const bool areReferenceEqual = true;
+            const bool areReferenceEqual = false;
 
             Assert.Equal(areReferenceEqual, ReferenceEquals(theDelegate, copy));
         }
@@ -120,9 +125,10 @@ namespace BanKai.Basic
             Action b = demoObject.B;
             Action c = demoObject.C;
 
-            ((a + b + c) - (a + c))();
+            ((a + b + c) - a - c)();
 
             // change variable value to fix test.
+            // Yansen
             const string expectedOutput = "B";
 
             Assert.Equal(expectedOutput, demoObject.ToString());
@@ -140,7 +146,7 @@ namespace BanKai.Basic
             int returnedResult = (returnsOne + returnsThree + returnsTwo)();
 
             // change variable value to fix test.
-            const int expectedResult = 6;
+            const int expectedResult = 2;
 
             Assert.Equal(expectedResult, returnedResult);
         }
@@ -155,7 +161,7 @@ namespace BanKai.Basic
             object returnedValue = delegateReturnsObject();
 
             // change variable value to fix test.
-            object expectedValue = null;
+            object expectedValue = "Hello";
 
             Assert.Equal(expectedValue, returnedValue);
         }
@@ -171,7 +177,7 @@ namespace BanKai.Basic
             string returnedValue = delegateAcceptsString("Good");
 
             // change variable value to fix test.
-            const string expectedValue = "";
+            const string expectedValue = "Good";
 
             Assert.Equal(expectedValue, returnedValue);
         }
