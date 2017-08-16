@@ -25,7 +25,9 @@ namespace BanKai.Basic
             }
 
             // change variable value to fix test.
-            const string expectedTracingMessage = "";
+            const string expectedTracingMessage = @"constructor called.
+dispose called.
+";
 
             Assert.Equal(expectedTracingMessage, tracer.ToString());
         }
@@ -41,7 +43,9 @@ namespace BanKai.Basic
             }
 
             // change the variable value to fix the test.
-            const string expectedTracingMessage = "";
+            const string expectedTracingMessage = @"constructor called.
+dispose called.
+";
 
             Assert.Equal(expectedTracingMessage, tracer.ToString());
         }
